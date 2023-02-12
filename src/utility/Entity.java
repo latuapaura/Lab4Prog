@@ -4,12 +4,6 @@ import classes.Skuperfild;
 
 public abstract class Entity implements GetProp {
 
-    public static void main(String[] args) {
-        Skuperfild sk1 = new Skuperfild();
-        Skuperfild sk2 = new Skuperfild();
-
-        System.out.println(sk1.equals(sk2));
-    }
     private final String name;
     public Entity(String name){
         this.name = name;

@@ -3,6 +3,8 @@ import classes.Birds;
 import classes.Flowers;
 import classes.Leafs;
 import classes.Wind;
+import exceptions.MoralStatesException;
+import exceptions.PositionException;
 import utility.*;
 
 public class Story {
@@ -30,6 +32,7 @@ public class Story {
                 System.out.println("Скуперфильд по-особенному существует");
             }
         };
+        var states = new States("Психическое состояние");
 
         skupEx.exist();
         skuperfild.breath();
@@ -52,7 +55,17 @@ public class Story {
         skuperfild.toFeel(tree);
         tree.whisper();
         pinkFlower.changePos(Position.INGRASS);
+        try {
+            pinkFlower.settingPosition();
+        } catch (PositionException e){
+            System.out.println(e.getMessage());
+        }
         blueFlower.changePos(Position.INGRASS);
+        try {
+            blueFlower.settingPosition();
+        } catch (PositionException e){
+            System.out.println(e.getMessage());
+        }
         pinkFlower.dazzle(grass);
         blueFlower.dazzle(grass);
         skuperfild.dontKnow(Emotion.NICE);
@@ -64,6 +77,11 @@ public class Story {
         birds.stoppedToScary(skuperfild, BirdAdj.REDTUMMY);
         pichuzka.satOnShoulder(skuperfild);
         stump.seenLike();
+        try {
+            states.settingMindBad();
+        } catch (MoralStatesException e){
+            System.out.println(e.getMessage());
+        }
         pichuzka.lookedWay(head);
         pichuzka.fliedAway(wings, skuperfild);
         skuperfild.feltSoft();

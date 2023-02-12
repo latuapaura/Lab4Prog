@@ -1,5 +1,7 @@
 package classes;
 
+import exceptions.MoralStatesException;
+import exceptions.PositionException;
 import utility.FlowerColor;
 import utility.Nature;
 import utility.Position;
@@ -18,16 +20,18 @@ public class Flowers extends Nature {
         System.out.println("В " + grass.getName()  + " пестреют "+ this.getName());
     }
 
-    public boolean changePos(Position pos){
+    public boolean changePos(Position pos) {
         this.pos = pos;
         System.out.println(this.getName() + " " + this.pos);
         return true;
     }
 
-    public boolean changeColor(Color color){
-        this.color = color;
-        System.out.println(this.getName() + " " + this.color);
-        return true;
+    public void settingPosition() throws PositionException {
+
+        if (this.pos == null) {
+            throw new PositionException("Кажется, что-то здесь отсутсвует.");
+        }
     }
+
 
 }
