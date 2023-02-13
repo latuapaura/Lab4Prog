@@ -7,10 +7,11 @@ import utility.Nature;
 import utility.Position;
 
 import java.awt.*;
+import java.nio.channels.FileLockInterruptionException;
+import java.util.Objects;
 
 public class Flowers extends Nature {
     private Position pos;
-    private Color color;
     public Flowers(FlowerColor color) {
         super(color + "цветы");
         this.connectToStory();
@@ -32,6 +33,23 @@ public class Flowers extends Nature {
             throw new PositionException("Кажется, что-то здесь отсутсвует.");
         }
     }
+
+    @Override
+    public boolean equals(Object o){
+        if (this == o){
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) return false;
+        Flowers flowers  = (Flowers) o;
+        return Objects.equals(pos, flowers.pos);
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hashCode(pos);
+    }
+
+}
 
 
 }
