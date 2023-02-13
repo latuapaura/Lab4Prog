@@ -1,13 +1,9 @@
 package classes;
 
-import exceptions.MoralStatesException;
 import exceptions.PositionException;
 import utility.FlowerColor;
 import utility.Nature;
 import utility.Position;
-
-import java.awt.*;
-import java.nio.channels.FileLockInterruptionException;
 import java.util.Objects;
 
 public class Flowers extends Nature {
@@ -51,5 +47,3 @@ public class Flowers extends Nature {
 
 }
 
-
-}
