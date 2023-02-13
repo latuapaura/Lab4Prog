@@ -5,7 +5,6 @@ import utility.Entity;
 import utility.PichuzkaBody;
 
 public class Pichuzka extends Entity {
-    private String name;
 
     public Pichuzka(){
         super("Пичужка");
