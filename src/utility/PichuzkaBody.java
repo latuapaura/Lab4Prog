@@ -1,20 +1,20 @@
 package utility;
 
 public abstract class PichuzkaBody {
-    private String name;
-    public void Body(String name) {
+    private final String name;
+    public PichuzkaBody(String name) {
         this.name = name;
     }
     public String getName() {
         return name;
     }
-    public static class Head extends Body{
+    public static class Head extends PichuzkaBody{
         public Head(){
             super("голова");
         }
     }
 
-    public static class Wings extends Body{
+    public static class Wings extends PichuzkaBody{
         public Wings(){
             super("крылья");
         }
